@@ -809,6 +809,67 @@
   <h1>Info</h1>
 
 <h2 id="info"><strong>Info</strong></h2>
+<p>Interface que disponibiliza informações do SDK, terminal e configurações.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">info</span><span class="w"> </span><span class="n">info</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">MobileSDK</span><span class="p">.</span><span class="na">getInfo</span><span class="p">(</span><span class="n">context</span><span class="p">);</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getSdkVersion</td>
+<td>Versão do SDK<br>Ex.: 2.0.0-280220</td>
+</tr>
+<tr>
+<td>getSdkExternalVersion</td>
+<td>Versão do SDK com informação de build.<br>Ex.: 2.0.0-280220-release</td>
+</tr>
+<tr>
+<td>getHardwareManufacturer</td>
+<td>Nome do fabricante do hardware.</td>
+</tr>
+<tr>
+<td>getHardwareModel</td>
+<td>Modelo do hardware.</td>
+</tr>
+<tr>
+<td>getBuildType</td>
+<td>Indica se a versão é release ou debug.</td>
+</tr>
+<tr>
+<td>getProfile</td>
+<td>Indica o profile do build.<br>Ex.: Linx</td>
+</tr>
+<tr>
+<td>isPrintSupported</td>
+<td>Indica se o terminal possui impressora nativa e integrada ao SDK.</td>
+</tr>
+<tr>
+<td>isSmartPOS</td>
+<td>Indica se o terminal é um SmartPOS.</td>
+</tr>
+<tr>
+<td>getIdentifier</td>
+<td>CNPJ ou CPF utilizado na consulta cadastro DTEF.</td>
+</tr>
+<tr>
+<td>getCompanyCode</td>
+<td>Código da empresa do DTEF.</td>
+</tr>
+<tr>
+<td>getStoreCode</td>
+<td>Código da loja do DTEF.</td>
+</tr>
+<tr>
+<td>getPointOfSale</td>
+<td>Código do terminal do DTEF.</td>
+</tr>
+</tbody>
+</table>
 
 
 

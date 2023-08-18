@@ -473,28 +473,84 @@
         
           <li class="md-nav__item">
   <a href="#onbeep" class="md-nav__link">
-    onBeep
+    onBeep()
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#onclean" class="md-nav__link">
-    onClean
+    onClean()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    ...
+  <a href="#onshowerrorstring-message" class="md-nav__link">
+    onShowError(String message)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#onshowqrcode" class="md-nav__link">
-    onShowQRCode
+  <a href="#onshowmessagestring-message" class="md-nav__link">
+    onShowMessage(String message)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onrequestconfirmationstring-message" class="md-nav__link">
+    onRequestConfirmation(String message)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onshowalertstring-message" class="md-nav__link">
+    onShowAlert(String message)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oninputinputmodel-inputmodel-result-result" class="md-nav__link">
+    onInput(InputModel inputModel, Result result)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onshowmenustring-label-list-items-int-selectedoption-menuresult-menuresult" class="md-nav__link">
+    onShowMenu(String label, List items, int selectedOption, MenuResult menuResult)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onmaskinputboolean-clean-string-label-string-mask-string-defaultvalue-boolean-enterkey-result-result" class="md-nav__link">
+    onMaskInput(boolean clean, String label, String mask, String defaultValue, boolean enterKey, Result result)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcanceledstatus" class="md-nav__link">
+    getCanceledStatus()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcanceledboolean-canceled" class="md-nav__link">
+    setCanceled(boolean canceled)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onshowqrcodestring-message-string-qrcode-list-tags" class="md-nav__link">
+    onShowQRCode(String message, String qrCode, List tags)
   </a>
   
 </li>
@@ -828,28 +884,84 @@
         
           <li class="md-nav__item">
   <a href="#onbeep" class="md-nav__link">
-    onBeep
+    onBeep()
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#onclean" class="md-nav__link">
-    onClean
+    onClean()
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    ...
+  <a href="#onshowerrorstring-message" class="md-nav__link">
+    onShowError(String message)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#onshowqrcode" class="md-nav__link">
-    onShowQRCode
+  <a href="#onshowmessagestring-message" class="md-nav__link">
+    onShowMessage(String message)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onrequestconfirmationstring-message" class="md-nav__link">
+    onRequestConfirmation(String message)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onshowalertstring-message" class="md-nav__link">
+    onShowAlert(String message)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oninputinputmodel-inputmodel-result-result" class="md-nav__link">
+    onInput(InputModel inputModel, Result result)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onshowmenustring-label-list-items-int-selectedoption-menuresult-menuresult" class="md-nav__link">
+    onShowMenu(String label, List items, int selectedOption, MenuResult menuResult)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onmaskinputboolean-clean-string-label-string-mask-string-defaultvalue-boolean-enterkey-result-result" class="md-nav__link">
+    onMaskInput(boolean clean, String label, String mask, String defaultValue, boolean enterKey, Result result)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getcanceledstatus" class="md-nav__link">
+    getCanceledStatus()
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setcanceledboolean-canceled" class="md-nav__link">
+    setCanceled(boolean canceled)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#onshowqrcodestring-message-string-qrcode-list-tags" class="md-nav__link">
+    onShowQRCode(String message, String qrCode, List tags)
   </a>
   
 </li>
@@ -877,10 +989,81 @@
   <h1>UICallback</h1>
 
 <h2 id="uicallback"><strong>UICallback</strong></h2>
-<h4 id="onbeep">onBeep</h4>
-<h4 id="onclean">onClean</h4>
-<h4 id="_1">...</h4>
-<h4 id="onshowqrcode">onShowQRCode</h4>
+<p>Interface que disponibiliza os callbacks de interação com o usuário, responsável por 
+gerenciar o comportamento e orquestrar a captura dos dados necessários para 
+processar uma transação.</p>
+<p>Para inicializar o MobileSDK, é necessário ter uma instância de UICallback. Sendo assim, 
+nossa sugestão é criar uma Activity que se responsabilize pelo fluxo de integração e 
+implemente essa interface (verifique nosso App de exemplo). </p>
+<p>Abaixo, temos uma lista dos métodos definidos pela interface e informações que 
+devemos utilizar para compreender qual o comportamento esperado pelo SDK, durante 
+o processo transacional.</p>
+<h4 id="onbeep">onBeep()</h4>
+<p>Deve emitir um feedback sonoro, quando suportado.</p>
+<h4 id="onclean">onClean()</h4>
+<p>Os componente utilizados para exibir mensagens e capturar dados ao usuário, devem 
+ser “resetados”. Ou seja, devem ter seus status iniciais restaurados.</p>
+<h4 id="onshowerrorstring-message">onShowError(String message)</h4>
+<p>Utilizado para exibir uma mensagem de erro ao usuário. O App deve definir a melhor 
+forma para tratar o callback. Contudo, a mensagem deve ser exibida de uma forma que 
+permita ao usuário identificar que se trata de uma mensagem de erro.</p>
+<p>Para auxiliar na visualização da mensagem, aplicar uma sleep de 2 segundos, após 
+exibição da mensagem.</p>
+<h4 id="onshowmessagestring-message">onShowMessage(String message)</h4>
+<p>Deve exibir a mensagem ao usuário, da forma como ela é notificada. Esse callback é 
+utilizado para apresentar mensagens gerais ao usuário, por exemplo, Aguarde, 
+Solicitando autorização, exibir mensagens enviadas pelo autorizador, etc</p>
+<h4 id="onrequestconfirmationstring-message">onRequestConfirmation(String message)</h4>
+<p>Deve exibir a mensagem e solicitar confirmação ao usuário. Pode ser utilizado para 
+confirmar a intenção de cancelar a execução da transação, por exemplo.</p>
+<h4 id="onshowalertstring-message">onShowAlert(String message)</h4>
+<p>Deve exibir a mensagem ao usuário, de preferência, de forma destacada, para enfatizar 
+que se trata de uma mensagem de atenção.</p>
+<p>Atualmente, esta função é utilizada no momento de se desfazer uma transação, onde é
+apresentada uma mensagem indicando que a transação foi desfeita e o cupom deve ser 
+retido. Por ser uma situação importante, é necessário a confirmação de leitura pelo 
+operador, mesmo que o callback não exija uma resposta.</p>
+<h4 id="oninputinputmodel-inputmodel-result-result">onInput(InputModel inputModel, Result result)</h4>
+<p>Deve exibir ao usuário um componente para entrada de dados, respeitando as regras e 
+definição do InputModel. </p>
+<h4 id="onshowmenustring-label-list-items-int-selectedoption-menuresult-menuresult">onShowMenu(String label, List<MenuItem> items, int selectedOption, MenuResult menuResult)</h4>
+<p>Deve exibir um componente de seleção, onde o usuário terá a possibilidade de 
+selecionar uma das opções apresentadas ou cancelar a operação.</p>
+<h4 id="onmaskinputboolean-clean-string-label-string-mask-string-defaultvalue-boolean-enterkey-result-result">onMaskInput(boolean clean, String label, String mask, String defaultValue, boolean enterKey, Result result)</h4>
+<p>Deve solicitar ao usuário a entrada de um dado, utilizando a máscara de edição 
+informada nos parâmetros do callback. Dessa forma, é responsabilidade do App 
+interpretar a máscara e formatar para o usuário.</p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>A máscara deve ser omitida na resposta. </p>
+</div>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>10/20, deve ser respondida como 1020. </p>
+</div>
+<h4 id="getcanceledstatus">getCanceledStatus()</h4>
+<p>Deve informar que o usuário sinalizou a intenção de abortar a operação. Normalmente 
+esse callback é chamado em operações de pinpad, ou seja, quando a aplicação está no 
+fluxo de pagamento, interagindo com o usuário através do DTEFMobile para capturar 
+dados do cartão. </p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>Leitura do cartão, captura de senha.</p>
+</div>
+<h4 id="setcanceledboolean-canceled">setCanceled(boolean canceled)</h4>
+<p>Permite que o usuário sinalize que deseja abortar uma operação que ocorre de forma 
+paralela ao fluxo de UI. </p>
+<p>Esse callback funciona de forma complementar ao getCanceledStatus(). Para indicar que 
+o fluxo deve ser abortado, o App deve informar valor <strong>true</strong>.</p>
+<h4 id="onshowqrcodestring-message-string-qrcode-list-tags">onShowQRCode(String message, String qrCode, List<Tag> tags)</h4>
+<p>Deve exibir o qrCode para o usuário e aguardar até o próximo comando de callback. 
+Normalmente, utilizado no fluxo de pagamento com QrLinx/PIX, onde a lista de tags, 
+pode ser retornada com informações associadas ao QrCode apresentado. </p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>No caso do fluxo de QrLinx/PIX, a lista de tags irá informar o nome das carteiras 
+de Wallet que podem finalizar (pagar) o QrCode</p>
+</div>
 
 
 

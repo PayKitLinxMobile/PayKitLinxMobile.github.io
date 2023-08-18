@@ -809,6 +809,154 @@
   <h1>ResultTransaction</h1>
 
 <h2 id="resulttransaction"><strong>ResultTransaction</strong></h2>
+<p>Classe responsável por representar o status e dados de resposta de uma transação. A 
+instância dessa classe é obtida através do callback TransactionCallback, fornecido como 
+um dos parâmetros do executeTransaction do MobileSDK, por exemplo.</p>
+<p>Quando uma transação é executa, o MobileSDK gera um evento através do método 
+onResult do TransactionCallback, dessa forma, o App obtém o status de execução da 
+transação. </p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>Fique atento, algumas informações são retornadas apenas em determinadas 
+transações. Sendo assim, os dados são opcionais dependendo do contexto e resultado 
+da transação.</p>
+</div>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getResultCode</td>
+<td>int</td>
+<td>Código que indica o status de execução da transação. Devemos considerar apenas o valor 0 (zero), como indicador de execução finalizada com sucesso. Sendo assim, para considerar que uma transação de crédito foi autorizada com sucesso, o resultCode deve indicar valor igual a 0 (zero).</td>
+</tr>
+<tr>
+<td>getType</td>
+<td>TransactionType</td>
+<td>Tipo da transação que foi executada.</td>
+</tr>
+<tr>
+<td>getTransactionCode</td>
+<td>int</td>
+<td>Código da transação executada, associado ao TransactionType.</td>
+</tr>
+<tr>
+<td>getTransactionAmount</td>
+<td>String</td>
+<td>Valor da transação em sua representação em texto.</td>
+</tr>
+<tr>
+<td>geTransactionDiscount</td>
+<td>String</td>
+<td>Valor do desconto em sua representação em texto, caso faça parte do contexto da transação que foi executada.</td>
+</tr>
+<tr>
+<td>getAuthorizationCode</td>
+<td>String</td>
+<td>Código de autorização da transação, gerado pelo autorizador.</td>
+</tr>
+<tr>
+<td>getNsu</td>
+<td>String</td>
+<td>Código NSU gerado pelo sistema de TEF.</td>
+</tr>
+<tr>
+<td>getAuthorizerNsu</td>
+<td>String</td>
+<td>Código NSU gerado pelo autorizador da transação.</td>
+</tr>
+<tr>
+<td>getBrandCode</td>
+<td>String</td>
+<td>Código da bandeira associado ao cartão, utilizado na transação.</td>
+</tr>
+<tr>
+<td>getBrand</td>
+<td>String</td>
+<td>Nome da bandeira do cartão, utilizado na transação.</td>
+</tr>
+<tr>
+<td>getResponseCode</td>
+<td>String</td>
+<td>Código de resposta da transação. Normalmente, utilizamos para identificar possíveis motivos da rejeição de uma transação.</td>
+</tr>
+<tr>
+<td>getReceipt</td>
+<td>String</td>
+<td>Comprovante da transação, no formato reduzido. Obs.: Depende do suporte por parte do autorizador.<br><br>O comprovante de venda é formatado em 38 colunas, onde as linhas são delimitadas com \n .</td>
+</tr>
+<tr>
+<td>getCustomerSalesReceipt</td>
+<td>String</td>
+<td>Comprovante da transação, destinada ao cliente.<br><br>O comprovante de venda é formatado em 38 colunas, onde as linhas são delimitadas com \n .</td>
+</tr>
+<tr>
+<td>getStoreSalesReceipt</td>
+<td>String</td>
+<td>Comprovante da transação, destinado ao lojista. O comprovante de venda é formatado em 38 colunas, onde as linhas são delimitadas com \n .</td>
+</tr>
+<tr>
+<td>getErrorMessage</td>
+<td>String</td>
+<td>Mensagem de erro, formatada quando a transação não foi autorizada.</td>
+</tr>
+<tr>
+<td>getCardHolderName</td>
+<td>String</td>
+<td>Nome do portador do cartão.</td>
+</tr>
+<tr>
+<td>getCardValidity</td>
+<td>String</td>
+<td>Validade do cartão.</td>
+</tr>
+<tr>
+<td>getCardNumber</td>
+<td>String</td>
+<td>Número do cartão, devolvido de forma mascarada. BIN + 4 Últimos Dígitos.</td>
+</tr>
+<tr>
+<td>getEspecialData</td>
+<td>String</td>
+<td>Dados especiais, utilizado para retornar os dados capturados, através executeTransactionEspecial.</td>
+</tr>
+<tr>
+<td>getBrandCodeSefaz</td>
+<td>String</td>
+<td>Código da bandeira do cartão, utilizado na identificação, junto a Sefaz.</td>
+</tr>
+<tr>
+<td>getInstallment</td>
+<td>Integer</td>
+<td>Número de parcelas utilizado para financiar a transação de crédito, por exemplo.</td>
+</tr>
+<tr>
+<td>getAcquirerCode</td>
+<td>String</td>
+<td>Código do adquirente / autorizador que processou a transação.</td>
+</tr>
+<tr>
+<td>getFinancialType</td>
+<td>String</td>
+<td>Tipo de financiamento utilizado na transação.<br><br>0 – À vista<br>1 – Administradora (com juros)<br>2 – Lojistas (sem juros)<br>3 – Pré-datado</td>
+</tr>
+<tr>
+<td>getOperationType</td>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>getParameter</td>
+<td>String</td>
+<td>Permite recuperar informações da resposta da transação, que não estão definidos na interface default.</td>
+</tr>
+</tbody>
+</table>
 
 
 

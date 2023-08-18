@@ -809,6 +809,74 @@
   <h1>SmartPrintService</h1>
 
 <h2 id="smartprintservice"><strong>SmartPrintService</strong></h2>
+<p>Serviço que fornece a interface necessária para utilizar a impressora nativa de um 
+equipamento SmartPOS.</p>
+<p>Para verificar se um terminal suporta impressão, o App pode utilizar 
+MobileSDK.getInfo(), que devolve uma instância de <a href="../../Integracao/Info/">Info</a>, onde é possível verificar o 
+suporte a impressão, através de <strong>isPrintSupport()</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>O serviço de impressão abstrai as particularidades de cada terminal e permite uma 
+integração única, onde a execução é realizada de forma assíncrona e o status da 
+impressão, recuperado através do callback SmartPrinter.PrinterCallback.</p>
+</div>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">SmartPrintService</span><span class="w"> </span><span class="n">smartPrintService</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SmartPrintService</span><span class="p">.</span><span class="na">getInstance</span><span class="p">();</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">smartPrintService</span><span class="p">.</span><span class="na">init</span><span class="p">(</span><span class="n">getApplication</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="n">smartPrintService</span><span class="p">.</span><span class="na">print</span><span class="p">(</span><span class="n">printLayout</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SmartPrinter</span><span class="p">.</span><span class="na">PrinterCallback</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onSuccess</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">i</span><span class="p">(</span><span class="s">&quot;print&quot;</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;onSuccess&quot;</span><span class="p">);</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w">    </span><span class="nd">@Override</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">onError</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">errorCode</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">message</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w">        </span><span class="n">Log</span><span class="p">.</span><span class="na">e</span><span class="p">(</span><span class="s">&quot;print&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">message</span><span class="p">);</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="p">}</span>
+</span></code></pre></div>
+<p>serviço e chamar o método init(), nesse momento, o serviço identifica o terminal e 
+inicializa a biblioteca nativa do hardware.</p>
+<p>Conforme exemplo, o status da inicialização do serviço, deve ser consultado antes de 
+solicitar a impressão, através do método print.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>init(Context)</td>
+<td>Inicializa o serviço de impressão e realiza bind na implementação nativa do hardware.</td>
+</tr>
+<tr>
+<td>print(PrintLayout, PrinterCallback)</td>
+<td>Imprime o layout definido em PrintLayout e devolve o status através do callback PrinterCallback.</td>
+</tr>
+<tr>
+<td>print(PrintLayout[], PrinterCallback)</td>
+<td>Imprime uma lista de layout e devolve o status geral da impressão. Ou seja, irá indicar sucesso, apenas se imprimir todos os itens da lista.</td>
+</tr>
+<tr>
+<td>print(PrintType, byte[])</td>
+<td>Disponibiliza o modo legado de impressão, que exige tratar cada item da impressão como uma impressão independente.<br><br>Obs.: Deve ser utilizado apenas por parceiros já integrados e que possuem alguma restrição em relação a nova modalidade</td>
+</tr>
+<tr>
+<td>print(PrintType, byte[], PrinterCallback)</td>
+<td>Disponibiliza o modo legado de impressão, que exige tratar cada item da impressão como uma impressão independente, porém, realiza a execução de forma assíncrona.<br><br>Obs.: Deve ser utilizado apenas por Apps já integrados e que possuem alguma restrição em relação a nova modalidade.</td>
+</tr>
+<tr>
+<td>printBarcode(PrintType, byte[])</td>
+<td>Disponibiliza o modo legado de impressão, que exige tratar cada item da impressão como uma impressão independente.<br><br>Obs.: Deve ser utilizado apenas por Apps já integrados e que possuem alguma restrição em relação a nova modalidade.</td>
+</tr>
+<tr>
+<td>printBarcode(PrintType, byte[], PrinterCallback)</td>
+<td>Disponibiliza o modo legado de impressão, que exige tratar cada item da impressão como uma impressão independente, porém, realiza a execução de forma assíncrona.<br><br>Obs.: Deve ser utilizado apenas por Apps já integrados e que possuem alguma restrição em relação a nova modalidade.</td>
+</tr>
+</tbody>
+</table>
 
 
 

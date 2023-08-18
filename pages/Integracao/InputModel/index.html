@@ -809,6 +809,69 @@
   <h1>InputModel</h1>
 
 <h2 id="inputmodel"><strong>InputModel</strong></h2>
+<p>Classe responsável em definir o comportamento da captura de um dado, solicitado ao 
+usuário.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>getType()</td>
+<td>Type</td>
+<td>Tipo do dado que deve ser solicitado ao usuário. Essa informação define como os demais parâmetros devem ser interpretados.</td>
+</tr>
+<tr>
+<td>getLabel()</td>
+<td>String</td>
+<td>Descrição do tipo de captura. Ex.: “NUMERO DE PARCELAS”.</td>
+</tr>
+<tr>
+<td>getDefaultValue()</td>
+<td>String</td>
+<td>Valor default do campo de captura.</td>
+</tr>
+<tr>
+<td>getMinLength()</td>
+<td>int</td>
+<td>Número mínimo de dígitos que deve ser permitido para a captura.</td>
+</tr>
+<tr>
+<td>getMaxLength()</td>
+<td>int</td>
+<td>Número máximo de dígitos que deve ser permitido para a captura.</td>
+</tr>
+<tr>
+<td>isCleanLabel()</td>
+<td>boolean</td>
+<td>Indica que o campo label deve ser limpo</td>
+</tr>
+<tr>
+<td>isExact()</td>
+<td>boolean</td>
+<td>Indica que a captura requer uma quantidade exata de dígitos.</td>
+</tr>
+<tr>
+<td>getMinValue()</td>
+<td>T (genérico)</td>
+<td>Valor mínimo que deve ser permitido para a captura. Normalmente, informado para captura do tipo AMOUNT, NUMBER.</td>
+</tr>
+<tr>
+<td>getMaxValue()</td>
+<td>T (genérico)</td>
+<td>Valor máximo que deve ser permitido para a captura. Normalmente, informado para captura do tipo AMOUNT, NUMBER.</td>
+</tr>
+<tr>
+<td>getAmountDecimals()</td>
+<td>int</td>
+<td>Número de casas decimais após a vírgula que deve ser permitido para a captura.</td>
+</tr>
+</tbody>
+</table>
 
 
 

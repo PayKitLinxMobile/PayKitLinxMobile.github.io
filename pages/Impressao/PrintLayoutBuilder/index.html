@@ -700,6 +700,26 @@
     PrintLayoutBuilder
   </a>
   
+    <nav class="md-nav" aria-label="PrintLayoutBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#printlayoutbuilderprintlayout" class="md-nav__link">
+    PrintLayoutBuilder.PrintLayout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printlayoutbuilder_1" class="md-nav__link">
+    PrintLayoutBuilder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -789,6 +809,26 @@
     PrintLayoutBuilder
   </a>
   
+    <nav class="md-nav" aria-label="PrintLayoutBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#printlayoutbuilderprintlayout" class="md-nav__link">
+    PrintLayoutBuilder.PrintLayout
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#printlayoutbuilder_1" class="md-nav__link">
+    PrintLayoutBuilder
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -809,6 +849,122 @@
   <h1>PrintLayoutBuilder</h1>
 
 <h2 id="printlayoutbuilder"><strong>PrintLayoutBuilder</strong></h2>
+<h4 id="printlayoutbuilderprintlayout">PrintLayoutBuilder.PrintLayout</h4>
+<p>Classe que representa o layout de impressão, ou seja, representa uma sequência de 
+comandos de impressão que foram previamente definidos pelo App e que definem um 
+layout de recibo, por exemplo.</p>
+<p>Para padronizar e otimizar o processo de impressão, o App deve criar uma instância do 
+PrintLayout através da classe PrintLayoutBuilder, que disponibiliza um conjunto de 
+rotinas que auxiliam nesse processo.</p>
+<h4 id="printlayoutbuilder_1">PrintLayoutBuilder</h4>
+<p>Classe que auxilia na formatação de um recibo de venda ou comprovante de pagamento, 
+por exemplo.</p>
+<p>É através dessa classe, que montamos o layout de impressão, utilizando métodos que 
+auxiliam na definição dos itens do layout. Com o layout de impressão definido, o 
+PrintLayoutBuilder, gera uma instância de PrintLayout, que deve ser informada no 
+método print do <a href="../SmartPrintService/">SmartPrintService</a>.</p>
+<p>Para melhor gerenciamento e otimização da qualidade de impressão, o 
+PrintLayoutBuilder utiliza o conceito de FontSize, que pré-define a fonte da impressão e 
+seu tamanho.</p>
+<p>Sendo assim, atualmente temos a seguinte definição para <strong>PrintLayoutBuilder.FontSize</strong>:
+<br>&nbsp;&nbsp;&nbsp;&nbsp;• NORMAL – valor default, otimizado para 38 colunas 
+<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>(orientamos utilizar comprovantes com essa definição)</strong>
+<br>&nbsp;&nbsp;&nbsp;&nbsp;• LARGE – otimizado para 44 colunas
+<br>&nbsp;&nbsp;&nbsp;&nbsp;• SMALL – otimizado para 48 colunas</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">PrintLayoutBuilder</span><span class="p">.</span><span class="na">PrintLayout</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">PrintLayoutBuilder</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="p">.</span><span class="na">create</span><span class="p">(</span><span class="n">applicationContext</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="p">.</span><span class="na">withText</span><span class="p">(</span><span class="err">“</span><span class="n">RECIBO</span><span class="w"> </span><span class="n">DE</span><span class="err">\</span><span class="n">nVENDA</span><span class="err">”</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="p">.</span><span class="na">withCenterAlign</span><span class="p">(</span><span class="s">&quot;QrCode&quot;</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w"> </span><span class="p">.</span><span class="na">withQrCode</span><span class="p">(</span><span class="s">&quot;valor do QRCode&quot;</span><span class="p">)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w"> </span><span class="p">.</span><span class="na">withAutomaticLineFeed</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w"> </span><span class="p">.</span><span class="na">build</span><span class="p">()</span><span class="w"> </span><span class="c1">// cria uma instancia de Printlayout</span>
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>create(Context, FontSize)</td>
+<td>Cria uma instância do PrintLayoutBuilder, definindo o tamanho da fonte que será utilizada para impressão de conteúdo no formato texto.</td>
+</tr>
+<tr>
+<td>withText(String)</td>
+<td>Adiciona ao layout de impressão um texto, que pode representar um recibo pré-definido, com diversas linhas, separadas por \n .<br><br>Esse é o método utilizado para adicionar ao layout, o cupom de TEF, devolvido na resposta da autorização. Esse cupom vem formatado para 38 colunas e utiliza \n como limitador de linhas.</td>
+</tr>
+<tr>
+<td>withText(String[])</td>
+<td>Adiciona ao layout de impressão um conjunto de linhas.<br><br>Obs.: As linhas adicionadas, devem respeitar a definição de FontSize.</td>
+</tr>
+<tr>
+<td>withLineFeed()</td>
+<td>Adiciona um avanço de linha.</td>
+</tr>
+<tr>
+<td>withLineFeed(int)</td>
+<td>Adiciona n avanços de linha.</td>
+</tr>
+<tr>
+<td>withAutomaticLineFeed()</td>
+<td>Adiciona automaticamente ao final do layout, o avanço de linhas necessário para o correto corte do papel. Normalmente, é necessário 4 avanços para cortar o papel. Sendo assim, se o layout original já tiver adicionado algum avanço de linha, será adicionado apenas a quantidade necessária para possibilitar o corte, sem perda de conteúdo.</td>
+</tr>
+<tr>
+<td>withCenterAlign(String)</td>
+<td>Adiciona uma linha, com texto centralizado.</td>
+</tr>
+<tr>
+<td>withCenterAlign(String...)</td>
+<td>Adiciona N linhas, com texto centralizado.</td>
+</tr>
+<tr>
+<td>withLeftAlign(String)</td>
+<td>Adiciona uma linha, com texto alinhado a esquerda.</td>
+</tr>
+<tr>
+<td>withLeftAlign(String...)</td>
+<td>Adiciona N linhas, com texto alinhado a esquerda.</td>
+</tr>
+<tr>
+<td>withRightAling(String)</td>
+<td>Adiciona uma linha, com texto centralizado a direta.</td>
+</tr>
+<tr>
+<td>withRightAling(String...)</td>
+<td>Adiciona N linhas, com texto alinhado a direita.</td>
+</tr>
+<tr>
+<td>withQrCode(String)</td>
+<td>Adiciona um QrCode ao layout de impressão. O QrCode, será adicionado de forma centralizada.</td>
+</tr>
+<tr>
+<td>withQrCode(String, boolean)</td>
+<td>Adiciona um QrCode ao layout de impressão.<br><br>Obs.: Essa rotina se destina a parceiros que já estão integrados com o DTEFMobile e querem otimizar seu processo de impressão. Na solução anterior, era necessário enviar um QrCode codificado em Base64. Se você deseja enviar o mesmo buffer, deve informar valor <strong>true</strong>, no parâmetro <strong>encode</strong>. Com isso, será inferido o comportamento legado ao processamento do QrCode.</td>
+</tr>
+<tr>
+<td>withBarcode128(String)</td>
+<td>Adiciona um barcode 128 com tamanho variado, que garante a correta impressão, inclusive para barcode com 44 caracteres.</td>
+</tr>
+<tr>
+<td>withBitmap(BitMap)</td>
+<td>Adiciona um bitmap ao layout.</td>
+</tr>
+<tr>
+<td>withImage(byte[])</td>
+<td>Adiciona uma imagem ao layout.<br><br>Obs.: A imagem deve ser informada como um array de byte. Fique atento ao tamanho da imagem que será enviada para impressão.</td>
+</tr>
+<tr>
+<td>withImage(byte[], boolean)</td>
+<td>Adiciona uma imagem ao layout.<br><br>Obs.: Essa rotina se destina a parceiros que já estão integrados com o DTEFMobile e querem otimizar seu processo de impressão. Na solução anterior, era necessário enviar uma imagem codificada em Base64. Se você deseja enviar o mesmo buffer, deve informar valor <strong>true</strong>, no parâmetro <strong>encode</strong>. Com isso, será inferido o comportamento legado ao processamento da imagem.</td>
+</tr>
+<tr>
+<td>build()</td>
+<td>Processa a definição do layout e gera uma instância de PrintLayout.</td>
+</tr>
+</tbody>
+</table>
 
 
 

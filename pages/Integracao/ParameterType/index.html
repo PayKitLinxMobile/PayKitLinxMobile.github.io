@@ -809,6 +809,46 @@
   <h1>ParameterType</h1>
 
 <h2 id="parametertype"><strong>ParameterType</strong></h2>
+<p>Define a lista de parâmetros suportados pelo <a href="../TransactionBuilder/">TransactionBuilder</a>, através do método:</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">withParameter</span><span class="p">(</span><span class="n">ParameterType</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Utilizado para informar parâmetros que não estão disponíveis por default no TransactionBuilder ou suas especializações. A seguir estão listados alguns destes parâmetros:</p>
+<table>
+<thead>
+<tr>
+<th>Parameter (input)</th>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PLACA_VEICULO</td>
+<td>AN (7)</td>
+<td>Identificação da placa compreendendo os 7 dígitos da identificação do veículo.</td>
+</tr>
+<tr>
+<td>MATRICULA_CONDUTOR</td>
+<td>N</td>
+<td>Código do motorista.</td>
+</tr>
+<tr>
+<td>HODOMETRO</td>
+<td>N</td>
+<td>Contador da quilometragem percorrida pelo veículo.</td>
+</tr>
+<tr>
+<td>HORIMETRO</td>
+<td>N</td>
+<td>Representa a quantidade de tempo de funcionamento do veículo.</td>
+</tr>
+<tr>
+<td>LISTA_PRODUTOS_ABASTECIMENTO</td>
+<td>AN</td>
+<td>Lista de dados que contempla dados do abastecimento, troca de óleo ou serviços. Esta lista deve ser informada no formato JSON. Exemplo para um abastecimento de 50 litros considerando que o combustível custa R$ 4,80 contabilizando um valor total de R$ 240,00:<br>{<br>"DadosServicos": [{<br>"tipoServico": "0001",<br>"codigoServico": "1",<br>"valorUnitario": "480",<br>"quantidade": "5000",<br>"quantidade3decimais": "50000",<br>"valorTotal": "24000",<br>"tipoAbastecimento": "10",<br>"valorTotalComDesconto": "24000"<br>}, {<br>"tipoServico": "0003",<br>"codigoServico": "123",<br>"valorTotal": "2500"<br>}]<br>}<br><br>Observações:<br>&nbsp;&nbsp;1. É permitida a entrada de apenas um abastecimento e de um registro de troca de óleo. Poderá ser incluída de 1 a n registros para manutenção realizada.<br>&nbsp;&nbsp;2. O campo “tipoServico” indica qual serviço foi realizado. Os valores permitidos são: <br>&nbsp;&nbsp;• “0001” - para abastecimento<br>&nbsp;&nbsp;• “0002” - para troca de óleo<br>&nbsp;&nbsp;• “0003” - para outros serviços</td>
+</tr>
+</tbody>
+</table>
 
 
 

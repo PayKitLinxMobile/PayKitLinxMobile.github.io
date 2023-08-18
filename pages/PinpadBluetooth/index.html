@@ -807,6 +807,18 @@
   <h1>Pinpad Bluetooth</h1>
 
 <h2 id="pinpad-bluetooth"><strong>Pinpad Bluetooth</strong></h2>
+<p>Para utilizar um Pinpad Bluetooth pareado ao Smartphone, é necessário indicar através 
+da instância de <a href="../Integracao/Transaction/">Transaction</a>, utilizando o parâmetro <a href="../Integracao/ParameterType/">ParameterType</a>.PINPAD_ATIVO no 
+método <strong>withParameter</strong> ou método <strong>withEnablePinpad</strong> da classe <a href="../Integracao/TransactionBuilder/">TransactionBuilder</a> e suas especializações.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">Transaction</span><span class="w"> </span><span class="n">transaction</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransactionBuilder</span><span class="p">.</span><span class="na">credit</span><span class="p">()</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w"> </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="mf">20.0</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="p">.</span><span class="na">withEnablePinpad</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w"> </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Quando for identificado apenas um Pinpad Bluetooth pareado ao Smartphone, ele será 
+automaticamente selecionado. Caso contrario, será utilizado os comandos de <a href="../Integracao/UICallback/">UICallback</a>
+para solicitar ao usuário a indicação de qual equipamento utilizar na transação.</p>
 
 
 

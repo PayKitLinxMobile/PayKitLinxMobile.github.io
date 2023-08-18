@@ -458,36 +458,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#executetransaction" class="md-nav__link">
-    executeTransaction
+  <a href="#executetransactiontransaction-transaction-transactioncallback-callback" class="md-nav__link">
+    executeTransaction(Transaction transaction, TransactionCallback callback)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#confirmtransaction" class="md-nav__link">
-    confirmTransaction
+  <a href="#confirmtransactiontransaction-transaction" class="md-nav__link">
+    confirmTransaction(Transaction transaction)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#undotransaction" class="md-nav__link">
-    undoTransaction
+  <a href="#undotransactiontransaction-transaction" class="md-nav__link">
+    undoTransaction(Transaction transaction)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#finalizetransaction" class="md-nav__link">
-    finalizeTransaction
+    finalizeTransaction()
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#getinfo" class="md-nav__link">
-    getInfo
+    getInfo()
   </a>
   
 </li>
@@ -834,36 +834,36 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#executetransaction" class="md-nav__link">
-    executeTransaction
+  <a href="#executetransactiontransaction-transaction-transactioncallback-callback" class="md-nav__link">
+    executeTransaction(Transaction transaction, TransactionCallback callback)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#confirmtransaction" class="md-nav__link">
-    confirmTransaction
+  <a href="#confirmtransactiontransaction-transaction" class="md-nav__link">
+    confirmTransaction(Transaction transaction)
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#undotransaction" class="md-nav__link">
-    undoTransaction
+  <a href="#undotransactiontransaction-transaction" class="md-nav__link">
+    undoTransaction(Transaction transaction)
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#finalizetransaction" class="md-nav__link">
-    finalizeTransaction
+    finalizeTransaction()
   </a>
   
 </li>
         
           <li class="md-nav__item">
   <a href="#getinfo" class="md-nav__link">
-    getInfo
+    getInfo()
   </a>
   
 </li>
@@ -891,11 +891,49 @@
   <h1>MobileSDK</h1>
 
 <h2 id="mobilesdk"><strong>MobileSDK</strong></h2>
-<h4 id="executetransaction">executeTransaction</h4>
-<h4 id="confirmtransaction">confirmTransaction</h4>
-<h4 id="undotransaction">undoTransaction</h4>
-<h4 id="finalizetransaction">finalizeTransaction</h4>
-<h4 id="getinfo">getInfo</h4>
+<p>O processo de integração é realizado através do MobileSDK, que disponibiliza rotinas 
+para realizar transações de crédito, débito, voucher, etc.</p>
+<p>No geral, transações financeiras seguem o fluxo de autorização e confirmação, sendo 
+assim, o MobileSDK, fornece os métodos necessários para realizar esse fluxo.</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">com.linx.dtefmobile.sdk</span><span class="p">;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">MobileSDK</span><span class="w"> </span><span class="n">mobileSDK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MobileSDK</span><span class="p">(</span><span class="n">Activity</span><span class="p">,</span><span class="w"> </span><span class="n">UICallback</span><span class="p">);</span>
+</span></code></pre></div>
+<h4 id="executetransactiontransaction-transaction-transactioncallback-callback">executeTransaction(<a href="../Transaction/">Transaction</a> transaction, TransactionCallback callback)</h4>
+<p>Inicia a execução de uma transação</p>
+<h4 id="confirmtransactiontransaction-transaction">confirmTransaction(<a href="../Transaction/">Transaction</a> transaction)</h4>
+<p>Confirma uma transação que foi autorizada, mas que ainda está pendente de 
+confirmação. O processo de confirmação é obrigatório para efetivar a autorização.</p>
+<p>No geral, o App deve executar a confirmação sempre que a transação for autorizada, os 
+dados da autorização interpretados e armazenados corretamente. Contudo, regras 
+relacionadas a particularidades da funcionalidade e negócio, também devem ser
+utilizadas para inferir esse comportamento.</p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>Em alguns casos, a execução dessa operação pode demorar e precisamos ter 
+cuidado para não bloquear a UiThread.</p>
+</div>
+<h4 id="undotransactiontransaction-transaction">undoTransaction(<a href="../Transaction/">Transaction</a> transaction)</h4>
+<p>Desfaz uma transação que foi autorizada. Geralmente, uma transação é desfeita quando 
+ocorre algum problema do lado do App e esse problema impossibilita o processamento 
+da resposta, o armazenamento dos dados da autorização ou a impressão do 
+comprovante.</p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>Em alguns casos, a execução dessa operação pode demorar e precisamos ter 
+cuidado para não bloquear a UiThread.</p>
+</div>
+<h4 id="finalizetransaction">finalizeTransaction()</h4>
+<p>Indica que o fluxo de pagamento foi finalizado. No geral, finalizeTransaction, sempre 
+deve ser executado para uma transação confirmada ou desfeita. O App deve executar 
+essa rotina, ao final do processado de pagamento. Ou seja, deve ser executado uma 
+única vez para cada fluxo de pagamento.</p>
+<div class="admonition example">
+<p class="admonition-title">Exemplo</p>
+<p>Para um pagamento finalizado com 2 cartões, o App deve confirmar cada transação 
+individualmente e depois executar o finalizeTransaction uma única vez.</p>
+</div>
+<h4 id="getinfo">getInfo()</h4>
+<p>Retornar uma instância da interface <a href="../Info/">Info</a>, com informações do SDK e terminal.</p>
 
 
 

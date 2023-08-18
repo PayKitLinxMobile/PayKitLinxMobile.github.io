@@ -809,6 +809,18 @@
   <h1>Logs</h1>
 
 <h2 id="logs"><strong>Logs</strong></h2>
+<p>O DTEFMobile registra num arquivo de log, dados referentes aos parâmetros de 
+integração, fluxo e chamadas de callback. Esse registro possibilita validar e verificar o 
+comportamento do DTEFMobile durante a execução de uma transação.</p>
+<p>Os arquivos de logs ficam armazenados no diretório DTEFMobile\logs do terminal. O 
+arquivo logger.log representa o log atual, que será arquivado na pasta archived, quando 
+superior a 2MB, com um limite de 100MB em backup de logs.</p>
+<div class="language-text highlight"><pre><span></span><code>Se os logs não estiverem disponíveis no diretório informado, seguir com as seguintes 
+validações e procedimentos:
+
+    1. Revisar as permissões do App, se Android superior a versão 6
+    2. Reiniciar o dispositivo para forçar a gravação do log no termina
+</code></pre></div>
 
 
 

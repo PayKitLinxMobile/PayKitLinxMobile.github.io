@@ -809,6 +809,24 @@
   <h1>Transaction</h1>
 
 <h2 id="transaction"><strong>Transaction</strong></h2>
+<p>Representa os dados de entrada da transação. A instância dessa classe, fornece ao 
+MobileSDK o tipo da transação que deve ser executada, além dos dados adicionais, que 
+foram previamente capturados pelo App. 
+Ex.: Valor da transação, número de parcelas, tipo de financiamento, etc.</p>
+<p>Uma instância de Transaction deve ser obtida através da classe <a href="../TransactionBuilder/">TransactionBuilder</a>, que 
+fornece métodos utilitários para criar um Builder genérico ou uma de suas 
+especializações.</p>
+<p><div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">TransactionBuilder</span><span class="p">.</span><span class="na">from</span><span class="p">(</span><span class="n">TransactionType</span><span class="p">.</span><span class="na">CARTAO_CREDITO</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="mf">20.00</span><span class="p">)</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span></code></pre></div>
+ou</p>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">CreditTransactionBuilder</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">TransactionBuilder</span><span class="p">.</span><span class="na">credit</span><span class="p">()</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;Sample&quot;</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="mf">20.0</span><span class="p">)</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">    </span><span class="p">.</span><span class="na">build</span><span class="p">()</span>
+</span></code></pre></div>
 
 
 

@@ -566,6 +566,19 @@
     TransactionBuilder
   </a>
   
+    <nav class="md-nav" aria-label="TransactionBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-da-transacao" class="md-nav__link">
+    Parâmetros da transação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -789,6 +802,19 @@
     TransactionBuilder
   </a>
   
+    <nav class="md-nav" aria-label="TransactionBuilder">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parametros-da-transacao" class="md-nav__link">
+    Parâmetros da transação
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -809,6 +835,122 @@
   <h1>TransactionBuilder</h1>
 
 <h2 id="transactionbuilder"><strong>TransactionBuilder</strong></h2>
+<p>Classe que auxilia no processo de parametrização de uma transação. É através dela, que 
+podemos definir o tipo da transação e podemos informar os parâmetros necessários
+para processar a transação solicitada.</p>
+<p>As informações que não foram previamente capturadas pelo App e passadas para o 
+MobileSDK, através do <a href="../Transaction/">Transaction</a>, serão solicitadas ao usuário durante o fluxo 
+transacional, caso necessário. Essa interação ocorre como chamadas aos callbacks 
+definidos na interface <a href="../UICallback/">UICallback</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>from(TransactionType)</td>
+<td>Cria uma instância genérica de TransactionBuilder com métodos auxiliares para definição de parâmetros gerais de uma transação.</td>
+</tr>
+<tr>
+<td>debit()</td>
+<td>Cria uma instância de DebitTransactionBuilder, que auxilia na parametrização da transação de débito.</td>
+</tr>
+<tr>
+<td>credit()</td>
+<td>Cria uma instância de CreditTransactionBuilder, que auxilia na parametrização da transação de crédito.</td>
+</tr>
+<tr>
+<td>voucher()</td>
+<td>Cria uma instância de VoucherTransactionBuilder, que auxilia na parametrização da transação de voucher.</td>
+</tr>
+<tr>
+<td>cancel()</td>
+<td>Cria uma instância de CancelTransactionBuilder, que auxilia na parametrização da transação de cancelamento.</td>
+</tr>
+<tr>
+<td>confirm()</td>
+<td>Cria uma instância de ConfirmationTransactionBuilder, que auxilia na parametrização da transação de confirmação.</td>
+</tr>
+<tr>
+<td>undo()</td>
+<td>Cria uma instância de UndoTransactionBuilder, que auxilia na parametrização da transação de desfazimento.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="parametros-da-transacao">Parâmetros da transação</h4>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>withAmount</td>
+<td>Valor da transação.</td>
+</tr>
+<tr>
+<td>withCpf</td>
+<td>CPF do cliente, se for necessário para transação.</td>
+</tr>
+<tr>
+<td>withInstallment</td>
+<td>Número de parcelas.</td>
+</tr>
+<tr>
+<td>withCardNumber</td>
+<td>Número do cartão, quando transação digitada habilitada para o estabelecimento.</td>
+</tr>
+<tr>
+<td>withFinancialType</td>
+<td>Tipo do financiamento, normalmente utilizado para operação de crédito e débito.</td>
+</tr>
+<tr>
+<td>withNsu</td>
+<td>Nsu da transação, normalmente utilizada no cancelamento e reimpressão de comprovante.</td>
+</tr>
+<tr>
+<td>withApplicationName</td>
+<td>Nome do App.</td>
+</tr>
+<tr>
+<td>withBillOfSale</td>
+<td>Código do cupom fiscal.</td>
+</tr>
+<tr>
+<td>withDateOfSale</td>
+<td>Data do cupom fiscal.</td>
+</tr>
+<tr>
+<td>withHourOfSale</td>
+<td>Hora do cupom fiscal.</td>
+</tr>
+<tr>
+<td>withEnablePinpad</td>
+<td>Desabilita o leitor de cartão para a transação.<br>Obs.: Verificar com a equipe e homologação, quando é possível utilizar essa parametrização, caso necessário.</td>
+</tr>
+<tr>
+<td>withDateAndHourOfSale</td>
+<td>Data e hora do cupom fiscal.</td>
+</tr>
+<tr>
+<td>withCardNumberTypingEnable</td>
+<td>Desabilita a captura digitada do cartão. Quando a leitura do cartão for cancelada pelo usuário, não será solicitada a digitação.</td>
+</tr>
+<tr>
+<td>withOriginalTransactionDate</td>
+<td>Data da transação original.<br>Ex.: Transação de reimpressão e cancelamento.</td>
+</tr>
+<tr>
+<td>build()</td>
+<td>Retorna um Intent, configurado para o tipo de transação e parâmetros definidos.</td>
+</tr>
+</tbody>
+</table>
 
 
 

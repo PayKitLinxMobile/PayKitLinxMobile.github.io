@@ -406,13 +406,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    ...
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -845,13 +838,6 @@
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    ...
-  </a>
-  
-</li>
-        
       </ul>
     </nav>
   
@@ -875,10 +861,26 @@
   <h1>Smart POS</h1>
 
 <h2 id="smartpos"><strong>SmartPOS</strong></h2>
+<p>Caso o App tenha como alvo um dispositivo SmartPOS, devemos adicionar as 
+dependências requeridas por cada tipo de terminal (fabricante/modelo). </p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>Verifique as versões de cada dependência, durante seu processo de integração. A 
+disponibilidade do terminal, deve ser consultada com seu representante comercial.</p>
+</div>
 <h4 id="sunmi-p2">Sunmi P2</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">implementation</span><span class="w"> </span><span class="err">&#39;</span><span class="n">br</span><span class="p">.</span><span class="na">com</span><span class="p">.</span><span class="na">sunmi</span><span class="p">:</span><span class="n">library</span><span class="o">-</span><span class="n">release</span><span class="p">:</span><span class="mf">1.0.14</span><span class="nd">@aar</span><span class="err">&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">implementation</span><span class="w"> </span><span class="err">&#39;</span><span class="n">br</span><span class="p">.</span><span class="na">com</span><span class="p">.</span><span class="na">sunmi</span><span class="p">:</span><span class="n">PayLib</span><span class="o">-</span><span class="n">release</span><span class="p">:</span><span class="mf">1.4.61</span><span class="nd">@aar</span><span class="err">&#39;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="n">implementation</span><span class="w"> </span><span class="err">&#39;</span><span class="n">br</span><span class="p">.</span><span class="na">com</span><span class="p">.</span><span class="na">sunmi</span><span class="p">:</span><span class="n">PPCompp2</span><span class="p">:</span><span class="mf">1.36</span><span class="nd">@aar</span><span class="err">&#39;</span>
+</span></code></pre></div>
 <h4 id="ingenico-apos-a8">Ingenico APOS A8</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">implementation</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="n">bcapos</span><span class="o">-</span><span class="mf">5.02</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">//aar </span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">implementation</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">dm</span><span class="o">-</span><span class="n">apos</span><span class="o">-</span><span class="mf">1.6.1</span><span class="o">-</span><span class="n">a8</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span><span class="c1">//aar</span>
+</span></code></pre></div>
 <h4 id="gertec-gpos700">Gertec GPOS700</h4>
-<h4 id="_1">...</h4>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">implementation</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">ppcomp</span><span class="o">-</span><span class="mf">1.25.6.190822</span><span class="err">&#39;</span><span class="p">)</span><span class="w"> </span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">implementation</span><span class="w"> </span><span class="nf">project</span><span class="p">(</span><span class="n">path</span><span class="p">:</span><span class="w"> </span><span class="err">‘</span><span class="n">gedi</span><span class="o">-</span><span class="n">payment</span><span class="o">-</span><span class="mf">1.14.13.190715</span><span class="err">’</span><span class="p">)</span>
+</span></code></pre></div>
 
 
 

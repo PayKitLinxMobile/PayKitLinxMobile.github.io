@@ -809,6 +809,51 @@
   <h1>InputModel.Type</h1>
 
 <h2 id="inputmodeltype"><strong>InputModel.Type</strong></h2>
+<p>Enum que classifica os tipos de captura associados ao <a href="../InputModel/">InputModel</a> do callback onInput.
+No geral, o tipo indica como o componente de captura deve se comportar naquele 
+momento, levando em consideração máscara de edição, teclado, etc.</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AMOUNT</td>
+<td>Informa que a captura está relacionada a captura de um dado monetário. Sendo assim, deve ser aplicado a máscara adequada.<br><br>Obs.: getMinValue() e getMaxValue() retornam um valor do tipo BigDecimal.</td>
+</tr>
+<tr>
+<td>AMOUNT_DECIMALS</td>
+<td>Informa que a captura está relacionada a um valor com casas decimais variável. Usado, por exemplo, na coleta de valor de quantidade de litros abastecidos em transação de frota (que exige 3 casas decimais).</td>
+</tr>
+<tr>
+<td>TEXT</td>
+<td>Indica a captura de um dado texto, que suporta números e letras.</td>
+</tr>
+<tr>
+<td>NUMBER</td>
+<td>Indica a captura de um dado numérico. Sendo assim, deve permitir apenas números.<br><br>Obs.: getMinValue() e getMaxValue() retornam um valor do tipo int.</td>
+</tr>
+<tr>
+<td>CARD_NUMBER</td>
+<td>Indica a captura do número do cartão. Deve permite apenas números, com no mínimo 11 e no máximo de 19 dígitos.</td>
+</tr>
+<tr>
+<td>CARD_DATE</td>
+<td>Indica a captura da data de validade do cartão. Sendo assim, deve aplicar a máscara " / ". A captura está relaciona a data no formato MM/AA.</td>
+</tr>
+<tr>
+<td>CARD_SECURITY_CODE</td>
+<td>Indica a captura do código de segurança do cartão. Por padrão, o código deve conter no mínimo 3 dígitos. Contudo, a quantidade mínima e máxima é informada através do <a href="../InputModel/">InputModel</a></td>
+</tr>
+<tr>
+<td>DATE</td>
+<td>Indica a captura de uma data. Sendo assim, deve aplicar a máscara " / /. ". A captura está relaciona a data no formato DD/MM/AA.<br><br>Caso a captura permita que o usuário informe uma data em branco, o App deve informar no método success da classe <a href="../Result/">Result</a>, o valor em branco “”</td>
+</tr>
+</tbody>
+</table>
 
 
 

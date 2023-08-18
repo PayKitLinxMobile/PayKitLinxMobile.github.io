@@ -809,6 +809,28 @@
   <h1>Result</h1>
 
 <h2 id="result"><strong>Result</strong></h2>
+<p>Classe responsável em retornar para o MobileSDK, o status da interação com o usuário, 
+durante a captura de um dado através do callback onInput ou onMaskInput, por 
+exemplo. Uma instância dessa classe é passada para o App, que deve utilizá-la para 
+sinalizar o resultado da captura.</p>
+<table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Descrição</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>success(String input)</td>
+<td>Tipo do dado que deve ser solicitado ao usuário. Essa informação define como os demais parâmetros deve ser interpretado.</td>
+</tr>
+<tr>
+<td>canceled()</td>
+<td>Indica que o usuário deseja abortar a captura do dado.</td>
+</tr>
+</tbody>
+</table>
 
 
 
