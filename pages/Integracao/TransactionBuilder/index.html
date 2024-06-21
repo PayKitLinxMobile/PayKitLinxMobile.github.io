@@ -728,6 +728,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#alguns-exemplos-de-utilizacao-baseados-no-tipo-de-financiamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alguns exemplos de utilização baseados no tipo de financiamento:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alguns exemplos de utilização baseados no tipo de financiamento:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one_instalment-a-vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      ONE_INSTALMENT - À vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_instalment_cash-parcelamento-com-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      WITH_INSTALMENT_CASH - Parcelamento com entrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without_instalment_cash-parcelamento-sem-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      WITHOUT_INSTALMENT_CASH - Parcelamento sem entrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_dated-pre-datado" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_DATED - Pré-datado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1084,6 +1135,57 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#alguns-exemplos-de-utilizacao-baseados-no-tipo-de-financiamento" class="md-nav__link">
+    <span class="md-ellipsis">
+      Alguns exemplos de utilização baseados no tipo de financiamento:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Alguns exemplos de utilização baseados no tipo de financiamento:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#one_instalment-a-vista" class="md-nav__link">
+    <span class="md-ellipsis">
+      ONE_INSTALMENT - À vista
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with_instalment_cash-parcelamento-com-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      WITH_INSTALMENT_CASH - Parcelamento com entrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#without_instalment_cash-parcelamento-sem-entrada" class="md-nav__link">
+    <span class="md-ellipsis">
+      WITHOUT_INSTALMENT_CASH - Parcelamento sem entrada
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pre_dated-pre-datado" class="md-nav__link">
+    <span class="md-ellipsis">
+      PRE_DATED - Pré-datado
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1218,11 +1320,67 @@ definidos na interface <a href="../UICallback/">UICallback</a>.</p>
 <td>Data da transação original.<br>Ex.: Transação de reimpressão e cancelamento.</td>
 </tr>
 <tr>
+<td>withInstallment</td>
+<td>Número de parcelas.</td>
+</tr>
+<tr>
+<td>withInstallmentEntryAmount</td>
+<td>Valor da entrada.</td>
+</tr>
+<tr>
+<td>withInstallmentFirstAmount</td>
+<td>Valor da primeira parcela.</td>
+</tr>
+<tr>
+<td>withInstallmentFirstDate</td>
+<td>Data da primeira parcela. Formato dd/mm/yy.</td>
+</tr>
+<tr>
+<td>withPreDated</td>
+<td>Data do agendamento. Formato dd/mm/yy.</td>
+</tr>
+<tr>
 <td>build()</td>
 <td>Retorna um Intent, configurado para o tipo de transação e parâmetros definidos.</td>
 </tr>
 </tbody>
 </table>
+<h4 id="alguns-exemplos-de-utilizacao-baseados-no-tipo-de-financiamento">Alguns exemplos de utilização baseados no <a href="../FinancialType/">tipo de financiamento</a>:</h4>
+<h5 id="one_instalment-a-vista">ONE_INSTALMENT - À vista</h5>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">new</span><span class="w"> </span><span class="n">TransactionBuilder</span><span class="p">(</span><span class="n">TransactionType</span><span class="p">.</span><span class="na">CARTAO_DEBITO</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">        </span><span class="p">.</span><span class="na">withFinancialType</span><span class="p">(</span><span class="n">FinancialType</span><span class="p">.</span><span class="na">ONE_INSTALMENT</span><span class="p">)</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">        </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;AppMobile&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// nome da aplicação</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">        </span><span class="p">.</span><span class="na">withEnablePinpad</span><span class="p">(</span><span class="kc">true</span><span class="p">)</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">        </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="n">getRandomAmount</span><span class="p">())</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">        </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</span></code></pre></div>
+<h5 id="with_instalment_cash-parcelamento-com-entrada">WITH_INSTALMENT_CASH - Parcelamento com entrada</h5>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">new</span><span class="w"> </span><span class="n">TransactionBuilder</span><span class="p">(</span><span class="n">TransactionType</span><span class="p">.</span><span class="na">CARTAO_DEBITO</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">      </span><span class="p">.</span><span class="na">withFinancialType</span><span class="p">(</span><span class="n">FinancialType</span><span class="p">.</span><span class="na">WITH_INSTALMENT_CASH</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">      </span><span class="p">.</span><span class="na">withInstallment</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="c1">// número de parcelas</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="p">.</span><span class="na">withInstallmentEntryAmount</span><span class="p">(</span><span class="mf">100.00</span><span class="p">)</span><span class="w"> </span><span class="c1">// valor da entrada</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;AppMobile&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// nome da aplicação</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="mf">200.00</span><span class="p">)</span><span class="w"> </span><span class="c1">// valor da transação</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">      </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</span></code></pre></div>
+<h5 id="without_instalment_cash-parcelamento-sem-entrada">WITHOUT_INSTALMENT_CASH - Parcelamento sem entrada</h5>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TransactionBuilder</span><span class="p">(</span><span class="n">TransactionType</span><span class="p">.</span><span class="na">CARTAO_DEBITO</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">      </span><span class="p">.</span><span class="na">withFinancialType</span><span class="p">(</span><span class="n">FinancialType</span><span class="p">.</span><span class="na">WITHOUT_INSTALMENT_CASH</span><span class="p">)</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">      </span><span class="p">.</span><span class="na">withInstallment</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="w"> </span><span class="c1">// número de parcelas</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">      </span><span class="p">.</span><span class="na">withInstallmentFirstAmount</span><span class="p">(</span><span class="mf">50.00</span><span class="p">)</span><span class="w"> </span><span class="c1">// valor da primeira parcela</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">      </span><span class="p">.</span><span class="na">withInstallmentFirstDate</span><span class="p">(</span><span class="s">&quot;20/04/24&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// data da primeira parcela</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">      </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;AppMobile&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// nome da aplicação</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">      </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="mf">200.00</span><span class="p">)</span><span class="w"> </span><span class="c1">// valor da transação</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">      </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</span></code></pre></div>
+<h5 id="pre_dated-pre-datado">PRE_DATED - Pré-datado</h5>
+<div class="language-java highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">TransactionBuilder</span><span class="p">(</span><span class="n">TransactionType</span><span class="p">.</span><span class="na">CARTAO_DEBITO</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">      </span><span class="p">.</span><span class="na">withFinancialType</span><span class="p">(</span><span class="n">FinancialType</span><span class="p">.</span><span class="na">PRE_DATED</span><span class="p">)</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">      </span><span class="p">.</span><span class="na">withPreDated</span><span class="p">(</span><span class="s">&quot;15/04/24&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// data do agendamento</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="p">.</span><span class="na">withApplicationName</span><span class="p">(</span><span class="s">&quot;AppMobile&quot;</span><span class="p">)</span><span class="w"> </span><span class="c1">// nome da aplicação</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="p">.</span><span class="na">withAmount</span><span class="p">(</span><span class="mf">200.00</span><span class="p">)</span><span class="w"> </span><span class="c1">// valor da transação</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="p">.</span><span class="na">build</span><span class="p">();</span>
+</span></code></pre></div>
 
 
 
