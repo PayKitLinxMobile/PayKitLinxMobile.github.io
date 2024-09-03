@@ -1431,11 +1431,20 @@ de Wallet que podem finalizar (pagar) o QrCode</p>
 <td>Código da rede autorizadora</td>
 <td style="text-align: center;">25</td>
 </tr>
+<tr>
+<td>Campos não utilizados na transação de Frota (formato JSON)</td>
+<td style="text-align: center;">456</td>
+</tr>
 </tbody>
 </table>
 <div class="admonition example">
 <p class="admonition-title">Exemplo</p>
-<p>Para a rede Ticket Log o código é 0156. Assim, nesta callback a automação deve receber <em>code</em> 25 e <em>value</em> "0156", indicando que a transação será autorizada pela rede Ticket Log.</p>
+<div class="language-text highlight"><pre><span></span><code>code = 25
+</code></pre></div>
+<p>Para a rede Ticket Log o código é 0156. Assim, nesta callback a automação deve receber <em>code</em> = 25 e <em>value</em> = "0156", indicando que a transação será autorizada pela rede Ticket Log.</p>
+<div class="language-text highlight"><pre><span></span><code>code = 456
+</code></pre></div>
+<p>Quando a automação enviar na transação de Frota produtos que não forem utilizados (devido às regras da adquirente), retorna-se nesta callback <em>code</em> = 456 e <em>value</em> sendo uma String em formato JSON, conforme a estrutura a seguir: "nao_utilizados" : [{"cod":"string", "quantidade":"double", "valorTotal": "double"}].</p>
 </div>
 
 
