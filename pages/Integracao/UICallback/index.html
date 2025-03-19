@@ -681,6 +681,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="void setCurrentTransactionInfo(int code, String value)Adicionado na v2.7.3.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      code = 25
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-456-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      code = 456 [EM DESENVOLVIMENTO]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-1336-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      code = 1336 [EM DESENVOLVIMENTO]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1290,6 +1323,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="void setCurrentTransactionInfo(int code, String value)Adicionado na v2.7.3.4">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#code-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      code = 25
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-456-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      code = 456 [EM DESENVOLVIMENTO]
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#code-1336-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      code = 1336 [EM DESENVOLVIMENTO]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
       </ul>
@@ -1424,20 +1490,24 @@ de Wallet que podem finalizar (pagar) o QrCode</p>
 <td style="text-align: center;">25</td>
 </tr>
 <tr>
-<td>Campos não utilizados na transação de Frota (formato JSON)</td>
+<td>Campos não utilizados na transação de Frota (formato JSON)<br>[<em>EM DESENVOLVIMENTO</em>]</td>
 <td style="text-align: center;">456</td>
+</tr>
+<tr>
+<td>Link de pagamento na Transação com QR Code <br>[<em>EM DESENVOLVIMENTO</em>]</td>
+<td style="text-align: center;">1336</td>
 </tr>
 </tbody>
 </table>
-<div class="admonition example">
-<p class="admonition-title">Exemplo</p>
-<div class="language-text highlight"><pre><span></span><code>code = 25
-</code></pre></div>
-<p>Para a rede Ticket Log o código é 0156. Assim, nesta callback a automação deve receber <em>code</em> = 25 e <em>value</em> = "0156", indicando que a transação será autorizada pela rede Ticket Log.</p>
-<div class="language-text highlight"><pre><span></span><code>code = 456
-</code></pre></div>
+<details class="example">
+<summary>Clique aqui para expandir e mostrar exemplos</summary>
+<h5 id="code-25">code = 25</h5>
+<p>Para a rede Stone o código é 127. Assim, nesta callback a automação deve receber <em>code</em> = 25 e <em>value</em> = "127", indicando que a transação será autorizada pela rede Stone.</p>
+<h5 id="code-456-em-desenvolvimento">code = 456 [<em>EM DESENVOLVIMENTO</em>]</h5>
 <p>Quando a automação enviar na transação de Frota produtos que não forem utilizados (devido às regras da adquirente), retorna-se nesta callback <em>code</em> = 456 e <em>value</em> sendo uma String em formato JSON, conforme a estrutura a seguir: "nao_utilizados" : [{"cod":"string", "quantidade":"double", "valorTotal": "double"}].</p>
-</div>
+<h5 id="code-1336-em-desenvolvimento">code = 1336 [<em>EM DESENVOLVIMENTO</em>]</h5>
+<p>Ao realizar uma Transação com QR Code via a rede QRLinx, a automação deve receber nesta callback <em>code</em> = 1336 e <em>value</em> sendo uma String contendo um link de pagamento. Este link pode ser disponibilizado ao cliente final via whatsapp, e-mail, SMS ou de alguma outra forma, permitindo assim disponibilizar mais um canal de pagamento para seu cliente.</p>
+</details>
 
 
 
