@@ -584,6 +584,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="InputModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getvalueid-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      getValueId() [EM DESENVOLVIMENTO]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1049,6 +1064,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="InputModel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getvalueid-em-desenvolvimento" class="md-nav__link">
+    <span class="md-ellipsis">
+      getValueId() [EM DESENVOLVIMENTO]
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
     </ul>
@@ -1069,8 +1099,7 @@
   <h1>InputModel</h1>
 
 <h2 id="inputmodel"><strong>InputModel</strong></h2>
-<p>Classe responsável em definir o comportamento da captura de um dado, solicitado ao 
-usuário.</p>
+<p>Classe responsável em definir o comportamento da captura de um dado, solicitado ao usuário.</p>
 <table>
 <thead>
 <tr>
@@ -1106,12 +1135,12 @@ usuário.</p>
 <td>Número máximo de dígitos que deve ser permitido para a captura.</td>
 </tr>
 <tr>
-<td>isCleanLabel()</td>
+<td>isClearLabel()</td>
 <td>boolean</td>
-<td>Indica que o campo label deve ser limpo</td>
+<td>Indica que o campo label deve ser limpo.</td>
 </tr>
 <tr>
-<td>isExact()</td>
+<td>getExact()</td>
 <td>boolean</td>
 <td>Indica que a captura requer uma quantidade exata de dígitos.</td>
 </tr>
@@ -1130,8 +1159,119 @@ usuário.</p>
 <td>int</td>
 <td>Número de casas decimais após a vírgula que deve ser permitido para a captura.</td>
 </tr>
+<tr>
+<td><a href="#getvalueid-em-desenvolvimento">getValueId()</a> [<strong><em>EM DESENVOLVIMENTO</em></strong>]</td>
+<td>int</td>
+<td>Código identificador do valor a ser capturado. Valor zero indica que não tem um código identificador para a automação e deve-se manter a coleta manual pelo usuário.</td>
+</tr>
 </tbody>
 </table>
+<h4 id="getvalueid-em-desenvolvimento">getValueId() [<strong><em>EM DESENVOLVIMENTO</em></strong>]</h4>
+<details class="note">
+<summary>Clique aqui para expandir e mostrar a lista dos identificadores</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Código</th>
+<th>Valor a ser coletado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td>Não identificado.</td>
+</tr>
+<tr>
+<td style="text-align: center;">246</td>
+<td>Quilometragem, hodômetro</td>
+</tr>
+<tr>
+<td style="text-align: center;">247</td>
+<td>Tipo de combustível, abastecimento</td>
+</tr>
+<tr>
+<td style="text-align: center;">248</td>
+<td>Matrícula do condutor</td>
+</tr>
+<tr>
+<td style="text-align: center;">249</td>
+<td>Litros do abastecimento</td>
+</tr>
+<tr>
+<td style="text-align: center;">250</td>
+<td>Placa do veículo</td>
+</tr>
+<tr>
+<td style="text-align: center;">299</td>
+<td>Tipo da operação</td>
+</tr>
+<tr>
+<td style="text-align: center;">388</td>
+<td>CPF ou CNPJ</td>
+</tr>
+<tr>
+<td style="text-align: center;">392</td>
+<td>Quantidade</td>
+</tr>
+<tr>
+<td style="text-align: center;">397</td>
+<td>Valor abastecido</td>
+</tr>
+<tr>
+<td style="text-align: center;">617</td>
+<td>Código do serviço</td>
+</tr>
+<tr>
+<td style="text-align: center;">633</td>
+<td>Horímetro</td>
+</tr>
+<tr>
+<td style="text-align: center;">887</td>
+<td>Valor total de produtos</td>
+</tr>
+<tr>
+<td style="text-align: center;">1302</td>
+<td>Bomba de combustível</td>
+</tr>
+<tr>
+<td style="text-align: center;">1303</td>
+<td>Letras da placa do veículo</td>
+</tr>
+<tr>
+<td style="text-align: center;">1304</td>
+<td>Números da placa do veículo</td>
+</tr>
+<tr>
+<td style="text-align: center;">1305</td>
+<td>Número da ordem de serviço</td>
+</tr>
+<tr>
+<td style="text-align: center;">1306</td>
+<td>Registro do funcionário</td>
+</tr>
+<tr>
+<td style="text-align: center;">1307</td>
+<td>Litros de óleo</td>
+</tr>
+<tr>
+<td style="text-align: center;">1308</td>
+<td>Valor do óleo</td>
+</tr>
+<tr>
+<td style="text-align: center;">1309</td>
+<td>Número da frota</td>
+</tr>
+<tr>
+<td style="text-align: center;">1310</td>
+<td>Tipo da coleta - Horímetro ou Hodômetro</td>
+</tr>
+<tr>
+<td style="text-align: center;">1311</td>
+<td>Valor do serviço</td>
+</tr>
+</tbody>
+</table>
+</details>
 
 
 

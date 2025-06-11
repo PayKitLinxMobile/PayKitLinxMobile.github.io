@@ -1179,7 +1179,13 @@ assim, o MobileSDK, fornece os métodos necessários para realizar esse fluxo.</
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">MobileSDK</span><span class="w"> </span><span class="n">mobileSDK</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">MobileSDK</span><span class="p">(</span><span class="n">Activity</span><span class="p">,</span><span class="w"> </span><span class="n">UICallback</span><span class="p">);</span>
 </span></code></pre></div>
 <h4 id="executetransactiontransaction-transaction-transactioncallback-callback">executeTransaction(<a href="../Transaction/">Transaction</a> transaction, TransactionCallback callback)</h4>
-<p>Inicia a execução de uma transação</p>
+<p>Inicia a execução de uma transação.</p>
+<div class="admonition warning">
+<p class="admonition-title">Observação</p>
+<p>Uma nova transação não deve ser iniciada sem que a transação anterior tenha sido finalizada.
+Portanto, a automação deve ter o controle para que transações <strong>não sejam executadas simultaneamente</strong>
+por threads distintas.</p>
+</div>
 <h4 id="confirmtransactiontransaction-transaction">confirmTransaction(<a href="../Transaction/">Transaction</a> transaction)</h4>
 <p>Confirma uma transação que foi autorizada, mas que ainda está pendente de 
 confirmação. O processo de confirmação é obrigatório para efetivar a autorização.</p>
