@@ -866,13 +866,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#json_integracao_qr-in-em-desenvolvimento" class="md-nav__link">
+  <a href="#json_integracao_qr-in" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON_INTEGRACAO_QR IN - [EM DESENVOLVIMENTO]
+      JSON_INTEGRACAO_QR IN
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR IN - [EM DESENVOLVIMENTO]">
+    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR IN">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1232,13 +1232,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#json_integracao_qr-out-em-desenvolvimento" class="md-nav__link">
+  <a href="#json_integracao_qr-out" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON_INTEGRACAO_QR OUT - [EM DESENVOLVIMENTO]
+      JSON_INTEGRACAO_QR OUT
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR OUT - [EM DESENVOLVIMENTO]">
+    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR OUT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1595,13 +1595,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#json_integracao_qr-in-em-desenvolvimento" class="md-nav__link">
+  <a href="#json_integracao_qr-in" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON_INTEGRACAO_QR IN - [EM DESENVOLVIMENTO]
+      JSON_INTEGRACAO_QR IN
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR IN - [EM DESENVOLVIMENTO]">
+    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR IN">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1961,13 +1961,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#json_integracao_qr-out-em-desenvolvimento" class="md-nav__link">
+  <a href="#json_integracao_qr-out" class="md-nav__link">
     <span class="md-ellipsis">
-      JSON_INTEGRACAO_QR OUT - [EM DESENVOLVIMENTO]
+      JSON_INTEGRACAO_QR OUT
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR OUT - [EM DESENVOLVIMENTO]">
+    <nav class="md-nav" aria-label="JSON_INTEGRACAO_QR OUT">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2155,6 +2155,11 @@
 <td>N</td>
 <td>"0" - não suporta; "1" - suporta. [Opcional]</td>
 </tr>
+<tr>
+<td>TOKEN_OPERACAO</td>
+<td>AN</td>
+<td>Parâmetro para permitir associar um token à transação de pagamento. [Opcional]</td>
+</tr>
 </tbody>
 </table>
 <h4 id="parametros-de-configuracao">Parâmetros de Configuração</h4>
@@ -2177,7 +2182,7 @@
 <tr>
 <td>TIMEOUT_SERVIDOR</td>
 <td>N</td>
-<td>Timeout de conexão com o servidor. Quando o parâmetro não for informado, a aplicação utiliza os valores default: 15s para transações em geral ou 90s para transações de QR Code. [Opcional]</td>
+<td>Timeout de conexão com o servidor. Quando o parâmetro não for informado ou for menor que o valor mínimo default, a aplicação utiliza os valores default: 15s para transações em geral ou 180s para transações de QR Code. [Opcional]</td>
 </tr>
 <tr>
 <td>TIPO_SERVIDOR_TEF</td>
@@ -2188,6 +2193,11 @@
 <td>PINPAD_ATIVO</td>
 <td>N</td>
 <td>"1" – Pinpad habilitado; "0" – Pinpad desabilitado. [Opcional]</td>
+</tr>
+<tr>
+<td>MENSAGEM_IDLE_PINPAD</td>
+<td>AN (16)</td>
+<td>Mensagem utilizada no display quando o pinpad está ocioso. Mensagem default: " <strong><em>* LINX </em></strong>* " [Opcional]</td>
 </tr>
 </tbody>
 </table>
@@ -2227,13 +2237,13 @@
 <tr>
 <td>JSON_INTEGRACAO_QR</td>
 <td>AN</td>
-<td>Parâmetro utilizado nas Transações com QR Code e na Transação de Consultas Genéricas QR. Formato: JSON. <br>[<strong><em>EM DESENVOLVIMENTO</em></strong>]</td>
+<td>Parâmetro utilizado nas Transações com QR Code e na Transação de Consultas Genéricas QR. Formato: JSON.</td>
 </tr>
 </tbody>
 </table>
-<h5 id="json_integracao_qr-in-em-desenvolvimento">JSON_INTEGRACAO_QR IN - [<strong><em>EM DESENVOLVIMENTO</em></strong>]</h5>
+<h5 id="json_integracao_qr-in">JSON_INTEGRACAO_QR IN</h5>
 <h6 id="transacao-de-consultas-genericas-qr">Transação de Consultas Genéricas QR</h6>
-<p>O parâmetro JSON_INTEGRACAO_QR é obrigatório. A automação deve informar os dados de entrada no formato JSON correspondentes ao tipo de consulta. E a resposta da solicitação será através do parâmetro de saída <a href="#json_integracao_qr-out-em-desenvolvimento">JSON_INTEGRACAO_QR OUT</a>.</p>
+<p>O parâmetro JSON_INTEGRACAO_QR é obrigatório. A automação deve informar os dados de entrada no formato JSON correspondentes ao tipo de consulta. E a resposta da solicitação será através do parâmetro de saída <a href="#json_integracao_qr-out">JSON_INTEGRACAO_QR OUT</a>.</p>
 <details class="note">
 <summary>Clique aqui para mais detalhes do parâmetro de entrada em Transações de Consultas Genéricas</summary>
 <p>Descrição dos campos:</p>
@@ -3052,7 +3062,7 @@
 <h4 id="parametros-de-entrada-exclusivos-para-a-rede-calcard">Parâmetros de entrada exclusivos para a Rede Calcard</h4>
 <details class="note">
 <summary>Clique aqui para expandir e mostrar detalhes sobre a rede Calcard</summary>
-<p>Transação de Consulta de Planos (utilizando TransactionType.PLANOS_PAGAMENTO):</p>
+<p>Transação de Consulta de Planos (utilizando TransactionType.CONSULTA_PLANOS):</p>
 <table>
 <thead>
 <tr>
@@ -3314,26 +3324,26 @@
 <tr>
 <td>METODO_PAGAMENTO_QR</td>
 <td>AN</td>
-<td>Método de pagamento da Transação com QR Code. <br> Ex: "PIX". <br>[<strong><em>EM DESENVOLVIMENTO</em></strong>]</td>
+<td>Método de pagamento da Transação com QR Code. <br> Ex: "PIX".</td>
 </tr>
 <tr>
 <td>END_TO_END_ID</td>
 <td>N</td>
-<td>Identificador EndToEnd da Transação com QR Code. <br> Ex: "E10032025183507".<br>[<strong><em>EM DESENVOLVIMENTO</em></strong>]</td>
+<td>Identificador EndToEnd da Transação com QR Code. <br> Ex: "E10032025183507".</td>
 </tr>
 <tr>
 <td>JSON_DADOS_ADICIONAIS_QR</td>
 <td>AN</td>
-<td>Parâmetro de output com dados adicionais da Transação com QR Code. Formato: JSON. <br> Ex: "{"IdEndToEnd":"E10032025183507","multiPsp":"false"}" <br>[<strong><em>EM DESENVOLVIMENTO</em></strong>]</td>
+<td>Parâmetro de output com dados adicionais da Transação com QR Code. Formato: JSON. <br> Ex: "{"IdEndToEnd":"E10032025183507","multiPsp":"false"}"</td>
 </tr>
 <tr>
-<td><a href="#json_integracao_qr-out-em-desenvolvimento">JSON_INTEGRACAO_QR</a></td>
+<td><a href="#json_integracao_qr-out">JSON_INTEGRACAO_QR</a></td>
 <td>AN</td>
-<td>Parâmetro de output das Consultas Genéricas QR. Formato: JSON. <br>[<strong><em>EM DESENVOLVIMENTO</em></strong>]</td>
+<td>Parâmetro de output das Consultas Genéricas QR. Formato: JSON.</td>
 </tr>
 </tbody>
 </table>
-<h5 id="json_integracao_qr-out-em-desenvolvimento">JSON_INTEGRACAO_QR OUT - [<strong><em>EM DESENVOLVIMENTO</em></strong>]</h5>
+<h5 id="json_integracao_qr-out">JSON_INTEGRACAO_QR OUT</h5>
 <h6 id="transacao-de-consultas-genericas-qr_1">Transação de Consultas Genéricas QR</h6>
 <p>A resposta da Transação de Consultas Genéricas QR será feita através do parâmetro de saída JSON_INTEGRACAO_QR. Os dados retornados vão depender do tipo da solicitação realizada.</p>
 <details class="note">
