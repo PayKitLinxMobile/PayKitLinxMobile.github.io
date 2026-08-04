@@ -10,23 +10,46 @@
 <script>
 (function () {
   var BASE = 'https://partner.equals.com.br/docs/tef/sdk-unico';
-  var MAP = [
-    [/^\/pages\/Configuracao\//i,            '/sdk-tef/configuracao'],
-    [/^\/pages\/SmartPOS/i,                  '/sdk-tef/configuracao'],
-    [/^\/pages\/Integracao\/Auth/i,          '/sdk-tef/ativacao'],
-    [/^\/pages\/Integracao\/(SDK|MobileSDK|Transaction($|\/)|TransactionBuilder|FinancialType|TransactionResult|TransactionType|Info)/i, '/sdk-tef/transacoes'],
-    [/^\/pages\/Integracao\/(UICallback|InputModel|Result|MenuResult|MenuItem)/i, '/sdk-tef/uicallback'],
-    [/^\/pages\/Integracao\/ParameterType/i, '/sdk-tef/parametros'],
-    [/^\/pages\/PinpadBluetooth/i,           '/sdk-tef/transacoes'],
-    [/^\/pages\/Impressao\//i,               '/sdk-tef/impressao'],
-    [/^\/pages\/(VersoesLiberadas|HistoricoRevisoes)/i, '/sdk-tef/versoes'],
-    [/^\/pages\/TerminaisHomologados/i,      '/terminais-homologados'],
-    [/^\/PayKitSdkUnico\.github\.io/i,       '']
-  ];
-  var path = window.location.pathname;
-  var target = BASE + '/sdk-tef/visao-geral';
-  for (var i = 0; i < MAP.length; i++) {
-    if (MAP[i][0].test(path)) { target = BASE + MAP[i][1]; break; }
+  var MAP = {
+    '/pages/configuracao/dependencias': '/sdk-tef/configuracao/dependencias',
+    '/pages/configuracao/suporte': '/sdk-tef/configuracao/suporte',
+    '/pages/configuracao/logs': '/sdk-tef/configuracao/logs',
+    '/pages/configuracao/manifest': '/sdk-tef/configuracao/manifest',
+    '/pages/smartpos': '/sdk-tef/smartpos',
+    '/pages/integracao/sdk': '/sdk-tef/integracao/sdk',
+    '/pages/integracao/auth': '/sdk-tef/integracao/auth',
+    '/pages/integracao/mobilesdk': '/sdk-tef/integracao/mobilesdk',
+    '/pages/integracao/uicallback': '/sdk-tef/integracao/uicallback',
+    '/pages/integracao/inputmodel': '/sdk-tef/integracao/inputmodel',
+    '/pages/integracao/inputmodel_type': '/sdk-tef/integracao/inputmodel-type',
+    '/pages/integracao/result': '/sdk-tef/integracao/result',
+    '/pages/integracao/menuresult': '/sdk-tef/integracao/menuresult',
+    '/pages/integracao/menuitem': '/sdk-tef/integracao/menuitem',
+    '/pages/integracao/transaction': '/sdk-tef/integracao/transaction',
+    '/pages/integracao/transactionbuilder': '/sdk-tef/integracao/transactionbuilder',
+    '/pages/integracao/financialtype': '/sdk-tef/integracao/financialtype',
+    '/pages/integracao/transactionresult': '/sdk-tef/integracao/transactionresult',
+    '/pages/integracao/resulttransaction': '/sdk-tef/integracao/resulttransaction',
+    '/pages/integracao/info': '/sdk-tef/integracao/info',
+    '/pages/integracao/transactiontype': '/sdk-tef/integracao/transactiontype',
+    '/pages/integracao/parametertype': '/sdk-tef/integracao/parametertype',
+    '/pages/transacoes/transacoes': '/sdk-tef/transacoes/referencia',
+    '/pages/transacoes': '/sdk-tef/transacoes/',
+    '/pages/integracaosemtelas/integracaosemtelas': '/sdk-tef/integracao-sem-telas',
+    '/pages/pinpadbluetooth': '/sdk-tef/pinpad-bluetooth',
+    '/pages/impressao/printlayoutbuilder': '/sdk-tef/impressao/printlayoutbuilder',
+    '/pages/impressao/smartprintservice': '/sdk-tef/impressao/smartprintservice',
+    '/pages/impressao/printtype': '/sdk-tef/impressao/printtype',
+    '/pages/terminaishomologados': '/sdk-tef/terminais-homologados',
+    '/pages/versoesliberadas': '/sdk-tef/versoes-liberadas',
+    '/pages/historicorevisoes': '/sdk-tef/historico-revisoes'
+  };
+  var path = window.location.pathname.replace(/\/+$/, '').toLowerCase();
+  var target;
+  if (/^\/paykitsdkunico\.github\.io/.test(path)) {
+    target = BASE + '/';
+  } else {
+    target = MAP[path] ? BASE + MAP[path] : BASE + '/sdk-tef/';
   }
   window.location.replace(target);
 })();
